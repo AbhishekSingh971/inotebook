@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import noteContext from "../../../inotebook/src/Context/notes/NoteContext";
 import AddNote from "./AddNote";
 import Noteitem from "./Noteitem";
@@ -7,12 +7,12 @@ import Noteitem from "./Noteitem";
 const Notes = (props) => {
   const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
-  let history = useHistory();
+  let navigate = useNavigate();
   useEffect(() => {
     if(localStorage.getItem('token')){
       getNotes();
     }else{
-      history.push("/login");
+      navigate("/login");
     }
     // eslint-disable-next-line
   }, []);

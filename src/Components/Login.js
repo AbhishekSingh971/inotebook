@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email:"",password:""});
-    let history = useHistory();
+    let navigate = useNavigate();
 
     const handleSubmit =async (e)=>{
         e.preventDefault();
@@ -20,7 +20,7 @@ const Login = (props) => {
           if (json.success){
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
-            history.push("/");
+            navigate("/");
             props.showAlert("Logged in Succsessfully", "success")
           }
           else{
