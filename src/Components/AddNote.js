@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import noteContext from "../../../resume-builder/src/Context/details/DetailContext";
+import noteContext from "../../../inotebook/src/Context/notes/NoteContext";
 
 const AddNote = (props) => {
   const context = useContext(noteContext);

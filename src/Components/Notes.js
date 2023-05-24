@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-import noteContext from "../../../resume-builder/src/Context/details/DetailContext";
+import noteContext from "../../../inotebook/src/Context/notes/NoteContext";
 import AddNote from "./AddNote";
 import Noteitem from "./Noteitem";
 
